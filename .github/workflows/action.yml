@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
-        user: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: docker build
         run: docker build -t nikitasingularity/homework:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
 
