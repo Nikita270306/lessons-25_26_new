@@ -1,5 +1,5 @@
 name: Build and deploy workflow
-on: [push]
+on: [ push ]
 jobs:
   build_ans_push:
     runs-on: ubuntu-latest
@@ -8,4 +8,5 @@ jobs:
         user: actions/checkout@v2
       - name: docker build
         run: docker build -t nikitasingularity/homework:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
+
 
