@@ -4,9 +4,8 @@ jobs:
   build_ans_push:
     runs-on: ubuntu-latest
     steps:
-      - name: list dir
-        run: ls -la
       - name: clone code
         user: actions/checkout@v2
-      - name: list dir 2
-        run: ls -la
+      - name: docker build
+        run: docker build -t nikitasingularity/homework:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
+
