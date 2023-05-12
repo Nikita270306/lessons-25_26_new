@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   api:
-    image: nikitasingularity/homework
+    image: nikitasingularity/homework:main-1
     platform: linux/amd64
     ports:
       - 80:80
@@ -14,9 +14,9 @@ services:
   pg:
     image: postgres:latest
     environment:
-      POSTGRES_USER: flask_app
-      POSTGRES_PASSWORD: flask_app_password
-      POSTGRES_DB: flask_app
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: test_db
     volumes:
       - ./pg_data:/var/lib/postgresql/data
     healthcheck:
