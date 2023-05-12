@@ -1,7 +1,7 @@
 name: Build and deploy workflow
 on: [ push ]
 jobs:
-  build_ans_push:
+  build_and_push:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
@@ -14,6 +14,7 @@ jobs:
         run: docker push nikitasingularity/homework:$GITHUB_REF_NAME-$GITHUB_RUN_ID
   deploy:
     runs-on: ubuntu-latest
+    needs: build_and_push
     steps:
       - name: clone code
         uses: actions/checkout@v2
